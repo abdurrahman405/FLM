@@ -1,26 +1,6 @@
 /*---------------------------------------
 COMMON STYLES             
 -----------------------------------------*/
-
-
-@font-face {
-    font-family: "samsung_sharp_bold";
-    src: url(font/samsung-sharp-sans/samsungsharpsans-bold.otf) ;
-}
-@font-face {
-    font-family: "samsung_sharp_medium";
-    src: url(font/samsung-sharp-sans/samsungsharpsans-medium.otf) ;
-}
-@font-face {
-    font-family: "samsung_sharp_normal";
-    src: url(font/samsung-sharp-sans/samsungsharpsans.otf) ;
-}
-:root{
-    --main-color: #FD6E6E;
-    --secondary-color: #1C284C;
-    --title-text-color: #333333;
-    --soft-text-color: #818893;
-}
 *{
     margin: 0;
     padding: 0;
@@ -34,7 +14,11 @@ html{
     font-size: 10px;
     margin: 0;
 }
-
+body {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
 @media only screen and (max-width: 1728px) {
 html{
         font-size: 9px;
@@ -57,7 +41,7 @@ html{
 }
 @media only screen and (max-width: 1050px) {
     html{
-        font-size: 10px;
+        font-size: 8px;
     }
 }
 @media only screen and (min-width: 2112px) {
@@ -110,27 +94,27 @@ html{
         font-size: 20px;
     }
 }
-
-body {
+body{
     position: relative;
     font-family: 'Noto Sans', sans-serif;
     font-size: 1.6rem;
     line-height: 3rem;
     font-weight: normal;
+    color: #748B91;
     overflow: hidden;
     margin: 0;
-    padding: 0;
-    color: #748B91;
+    font-weight: 400;
 }
+
 a {
-    color: var(--title-color);
+    color: #748B91;
     transition: all .3s;
 }
 a, a:hover, a:focus{
     text-decoration: none;
     outline: none;
     transition: all .3s;
-    
+    color: #748B91;
     }
 ul, ol, li{
     list-style: none;
@@ -142,30 +126,21 @@ img{
     height: auto;
 }
 h1, h2, h3, h4, h5, h6 {
-    color: var(--title-color);
+    color: #07B3C5;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
 }
 h1 {
     font-size: 6rem;
-    line-height: 4.4rem;
-    font-family: '';
+    line-height: 7rem;
 }
 h2 {
-    font-size: 3.4rem;
-    line-height: 3.9rem;
-    color: #07B3C5;
-    font-family: 'Montserrat', sans-serif;
-}
-@media only screen and (max-width: 1050px) {
-    h2{
-        font-size: clamp(2.8rem, 5vw + 125%, 4.8rem);
-        line-height: clamp(100%, 5vw + 100%, 5.5rem);
-    }
-
+    font-size: 5rem;
+    line-height: 6rem;
 }
 h3 {
-    font-size: 2.8rem;
-    line-height: 3.9rem;
-    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    line-height: 4rem;
 }
 h4 {
     font-size: 2.5rem;
@@ -174,14 +149,18 @@ h4 {
 h5 {
     font-size: 2rem;
     line-height: 3rem;
-    letter-spacing: .32rem;
-    text-transform: uppercase;
 }
 h6 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     line-height: 2.5rem;
-    font-family: 'Charmonman', cursive;
 }
+.container {
+    max-width: 133rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+
 
 a.btn{
     text-transform: uppercase;
@@ -190,22 +169,15 @@ a.btn{
     justify-content: center;
     font-weight: 700;
 }
-.container {
-    width: 117rem;
-    padding-right: 1.5rem;
-    padding-left: 1.5rem;
-    margin-right: auto;
-    margin-left: auto;
-    max-width: 100%;
-}
+
 .footer-container {
     width: 133rem;
 }
 
 
-.title_row {
+/* .title_row {
     color: #07B3C5;
-}
+} */
 .logo-container img {
     object-fit: cover;
 }
@@ -614,10 +586,12 @@ a.btn{
     background-color: #FFF;
     position: relative;
     padding-bottom: 4rem;
+    z-index: 1;
 }
 .service-bg-dots-left,
 .service-bg-dots-right {
     position: absolute;
+    z-index: -1;
 }
 .service-bg-dots-left {
     left: 0;
@@ -628,11 +602,12 @@ a.btn{
     bottom: 0;
     transform: rotateY(180deg);
 }
-.practice-areas .practice-areas-cntainer .practice-area-title-row {
+.practice-area-title-row {
     text-align: center;
-    margin-bottom: 9.5rem;
+    margin: 0 auto 9.5rem;
+    max-width: 96rem;
 }
-.practice-areas h2{
+.practice-area-title-row h2{
     margin-bottom: 2.2rem;
 }
 .services-row {
@@ -641,7 +616,7 @@ a.btn{
     justify-content: space-between;
     row-gap: 2.5rem;
 }
-.practice-areas .services-row .single-service {
+.practice-areas .single-service {
     width: calc(33% - 1rem);
     border: .1rem solid #f2f2f2;
     box-shadow: 0rem 1.6rem 1.2rem rgba(226, 238, 241, 0.17);
@@ -655,6 +630,13 @@ a.btn{
 .practice-areas .single-service .img-container img {
     width: 100%;
     object-fit: cover;
+}
+.practice-areas .single-service h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    max-width: 28rem;
 }
 .practice-areas .single-service .img-container::after {
     position: absolute;
@@ -671,9 +653,11 @@ a.btn{
     line-height: 2rem;
     border-bottom: .1rem solid #f2f2f2;
 }
-.practice-areas .single-service .title_row .title{
+.practice-areas .single-service .title{
     margin-left: 2.2rem;
     min-height: 4rem;
+    display: flex;
+    align-items: center;
 }
 .practice-areas .single-service .icon {
     border-right: .1rem solid #f2f2f2;
@@ -684,7 +668,7 @@ a.btn{
     justify-content: center;
 }
 .practice-areas .single-service .content-row {
-    padding: 3rem 2.5rem;
+    padding: 2rem 3rem;
     font-size: 1.4rem;
     line-height: 2rem;
     border-bottom: .1rem solid #f2f2f2;
@@ -692,12 +676,14 @@ a.btn{
 }
 .more-btn-row a.btn {
     justify-content: flex-start;
-    margin-left: 2.5rem;
+    margin-left: 3rem;
     font-size: 1.2rem;
     gap: .8rem;
+    font-weight: 700;
     color: #07B3C5;
-    line-height: 1;
+    line-height: 1.3rem;
     padding: 2.5rem 0rem;
+    font-family: 'Montserrat', sans-serif;
 }
 .practice-areas .all-services {
     background-color: #ECFDFF;
@@ -726,7 +712,7 @@ a.btn{
     font-weight: 900;
     text-transform: uppercase;
     font-family: 'Montserrat', sans-serif;
-    margin-bottom: 11.9rem;
+    margin-bottom: 10.5rem;
     padding: 0rem 1rem;
     text-align: center;
 }
@@ -864,10 +850,11 @@ a.cta-btn.btn {
     border-top: .1rem solid #D4E7ED;
 
 }
-.accordion-active {
+.single-accordion.accordion-active .accordion-content {
     height: max-content;
     min-height: 9rem;
     visibility: visible;
+    margin-bottom: 1.5rem;
 }
 
 /* --------------------------   TESTIMONIAL   -------------------------- */
@@ -1054,6 +1041,45 @@ a.cta-btn.btn {
     font-size: 1.35rem;
     font-weight: 800;
     margin-bottom: 1.5rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: all .3s;
+    
+}
+.our-passion-cta a.btn:hover,
+.our-passion-cta a.btn:hover svg {
+    color: #000;
+    fill: #07B3C5;
+    border: rgba(255, 255, 255, 0);
+    transition: all .3s;
+
+}
+.our-passion-cta a.btn::before,
+.our-passion-cta a.btn::after {
+    position: absolute;
+    content: '';
+    width: 23rem;
+    height: 13rem;
+    background-color: #ffffff;
+    transform: rotate(45deg);
+    z-index: -1;
+    transition: all .3s;
+
+}
+.our-passion-cta a.btn::before {
+    right: -22rem;
+}
+.our-passion-cta a.btn::after {
+    left: -22rem;
+}
+
+
+.our-passion-cta a.btn:hover:before {
+    right: -9.3rem;
+}
+.our-passion-cta a.btn:hover:after {
+    left: -9.3rem;
 }
 .our-passion-cta a.btn span {
     margin-right: 1.6rem;
@@ -1148,9 +1174,13 @@ a.blog-btn span {
     width: 5.5rem;
     height: 5.5rem;
     border-radius: 5rem;
-    border: .1rem solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: .1rem solid #07B3C5;
     position: absolute;
     bottom: -8rem;
+    cursor: pointer;
 }
 .blog-area .prev-arrow {
     right: 7.5rem;
@@ -1158,6 +1188,13 @@ a.blog-btn span {
 .blog-area .next-arrow {
     right: 0;
 }
+.blog-area .next-arrow svg,
+.blog-area .prev-arrow svg {
+    fill: #07B3C5;
+}
+
+
+
 
 
 /* --------------------------   TESTIMONIAL   -------------------------- */
