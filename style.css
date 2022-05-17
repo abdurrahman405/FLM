@@ -98,12 +98,13 @@ body{
     position: relative;
     font-family: 'Noto Sans', sans-serif;
     font-size: 1.6rem;
-    line-height: 3rem;
+    line-height: 2.9rem;
     font-weight: normal;
     color: #748B91;
     overflow: hidden;
     margin: 0;
     font-weight: 400;
+    
 }
 
 a {
@@ -135,8 +136,9 @@ h1 {
     line-height: 7rem;
 }
 h2 {
-    font-size: 5rem;
-    line-height: 6rem;
+    font-size: 3.4rem;
+    line-height: 3.9rem;
+    font-weight: 800;
 }
 h3 {
     font-size: 3rem;
@@ -155,7 +157,7 @@ h6 {
     line-height: 2.5rem;
 }
 .container {
-    max-width: 133rem;
+    max-width: 117rem;
     margin: 0 auto;
     padding: 0 1.5rem;
 }
@@ -462,45 +464,58 @@ a.btn{
     z-index: 2;
     position: relative;
 }
-.local-solution-container::before{
+.local-solution-content-row {
+    background-color: #fff;
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+}
+.local-solution-content-row::after {
     position: absolute;
     content: '';
-    border: .1rem #85E6F0 solid;
-    width: calc(100% - 4.4rem);
-    height: calc(100% - 4rem);
-    margin: 2rem 2.2rem;
-    top: 0rem;
-    left: 0rem;
-    background-color: transparent;
+    width: 50%;
+    height: 100%;
+    background-color: #07B3C5;
+    right: 0;
+    top: 0;
+    z-index: -1;
 }
-.local-solution-row{
+.border-container {
     display: flex;
-    border: .1rem #85E6F0 solid;
+    flex-wrap: wrap;
+    border: .1rem solid #85E6F0;
 }
 .left-col,
 .right-col {
     width: 50%;
 }
 .left-col{
-    padding: 9.5rem 5.35rem 7.3rem 6.8rem;
+    padding: 7.5rem 3.35rem 5.3rem 4.8rem;
+}
+.local-solution h2 {
+    margin-bottom: 3.3rem;
 }
 .right-col {
-    background-color: #07B3C5;
-    padding: 9.5rem 5.5rem 7rem;
+    background-color: #ffffff00;
+    padding: 7.5rem 4.5rem 5rem;
     letter-spacing: -0.96px;
-    color: #FFF;
+    color: rgb(255, 255, 255);
 }
 .right-col p{
     display: block;
-    margin-bottom: 2rem;
     text-align: justify;
 }
-.right-col p:last-child{
-    margin-bottom: 0rem;
+.right-col p:not(:last-child) {
+    margin-bottom: 2rem;
 }
 .local-solution .title_row span {
-    color: #193C48;
     display: block;
+    font-size: 2.8rem;
+    text-transform: uppercase;
+}
+.local-solution .title_row span:last-child {
+    color: #193C48;
+    font-weight: 600;
 }
 .local-solution .title_row h3{
     margin-bottom: 3.3rem;
@@ -554,6 +569,14 @@ a.btn{
 }
 @media only screen and (max-width: 768px) {
 
+
+    .local-solution-content-row::after {
+        bottom: 0;
+        height: 49%;
+        width: 100%;
+        top: 100%;
+        transform: translate(0%, -100%);
+    }
     .local-solution-container {
         flex-direction: column;
     }
@@ -620,7 +643,7 @@ a.btn{
     width: calc(33% - 1rem);
     border: .1rem solid #f2f2f2;
     box-shadow: 0rem 1.6rem 1.2rem rgba(226, 238, 241, 0.17);
-    min-width: 31rem;
+    min-width: 30rem;
 }
 .practice-areas .single-service .img-container {
     position: relative;
@@ -731,6 +754,13 @@ a.btn{
         gap: 15px;
     }
 }
+@media only screen and (max-width: 799px) {
+
+    .practice-areas .services-row .single-service {
+        width: 45%;
+        /* min-width: 45%; */
+    }
+}
 @media only screen and (max-width: 550px) {
 
     .practice-areas .services-row .single-service {
@@ -740,6 +770,12 @@ a.btn{
 
 /* ----------------------------   CTA AREA   ---------------------------- */
 
+
+
+.cta-area {
+    margin-top: 5.5rem;
+    margin-bottom: 13rem;
+}
 .cta-row {
     position: relative;
     width: 100%;
@@ -756,6 +792,8 @@ a.btn{
     max-width: 98rem;
     margin: 0 0 0 auto;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
     background-color: aliceblue;
     padding: 4rem 5rem 3.5rem 10rem;
@@ -797,12 +835,35 @@ a.cta-btn.btn {
     font-family: 'Montserrat', sans-serif;
 }
 
-/* ---------------------------------------------------------------------- */
+@media only screen and (max-width: 950px) {
 
-.cta-area {
-    margin-top: 5.5rem;
-    margin-bottom: 13rem;
-}
+
+    .cta-arrow-logo {
+        display: none;
+    }
+    .cta-content-area {
+        max-width: 100%;
+        border-radius: 0;
+        padding: 3rem 3rem;
+    }
+    
+    .cta-text-area {
+        margin: 0 0 2rem 0;
+    }
+    .cta-area span{
+        display: block;
+    }
+} 
+
+
+
+
+
+/* -----------------------------------   why choice us   ----------------------------------- */
+
+
+
+
 .why-choice-us-area .img-container {
     width: 100%;
     max-width: 83.63rem;
@@ -857,7 +918,7 @@ a.cta-btn.btn {
     margin-bottom: 1.5rem;
 }
 
-/* --------------------------   TESTIMONIAL   -------------------------- */
+/* --------------------------   OUR EDGE   -------------------------- */
 
 
 .our-edge-area {
@@ -868,6 +929,9 @@ a.cta-btn.btn {
     position: absolute;
     z-index: -1;
     right: 0;
+    width: 100%;
+    max-width: 47.5rem;
+    top: 0;
 }
 .our-edge-area::after {
     position: absolute;
@@ -885,96 +949,65 @@ a.cta-btn.btn {
     padding: 7rem 0 0;
 }
 .our-edge-title-row .sub-title-area {
-    width: 89rem;
+    width: 100%;
+    max-width: 89rem;
     margin: 0 auto;
 }
 .our-edge-title-row h2 {
     margin-bottom: 1.72rem;
+    font-weight: 800;
+}
+.our-edge-area .single-feature {
+    width: calc(33% - 1rem);
+    padding: 3.5rem 3.3rem 4.4rem 4.5rem;
+    border-right: .1rem solid #E9FAFF;
+    min-width: 30rem;
 }
 .our-edge-content-area .icon-container {
-    width: 4.5rem;
-    height: 4.5rem;
+    width: 4.7rem;
+    height: 4.7rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 2.3rem;
+    margin-bottom: 1.625rem;
 }
-.our-edge-content-area .title-container {
-    font-size: 2rem;
-    font-weight: 600;
-    margin-bottom: 2.3rem;
-    color: #07B3C5;
-    font-family: 'Montserrat', sans-serif;
+.our-edge-content-area .single-feature h2 {
+    font-size: 2.2rem;
+    margin-bottom: 2.15rem;
+    line-height: 2.4rem;
     font-weight: 800;
     text-transform: uppercase;
+    letter-spacing: .032rem;
 }
 .our-edge-content-area {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     background-color: #fff;
     box-shadow: 16px 14px 60px rgba(7, 80, 88, 0.07);
     margin-bottom: 15rem;
 }
-.single-feature {
-    width: calc(33% - 1rem);
-    padding: 3.5rem 3.3rem 4.4rem 4.5rem;
-    border-right: 1px solid #E9FAFF;
-}
 .our-edge-content-area .content-container {
     font-size: 1.4rem;
-    line-height: 2.2rem;
+    line-height: 2.23rem;
     min-height: 16rem;
 }
-/* --------------------------   TESTIMONIAL   -------------------------- */
 
-.before-testimonial-design {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-.before-testimonial-design::before,
-.before-testimonial-design::after {
-    position: absolute;
-    content: '';
-    width: calc(50% - 8rem);
-    height: .1rem;
-    border-top: .1rem solid #D4E7ED;
-    top: 50%;
-}
-.before-testimonial-design::before {
-    left: 0;
-}
-.before-testimonial-design::after {
-    right: 0;
-}
-.before-testimonial-design .icon-container {
-    display: flex;
-    width: 11.281rem;
-    height: 9.488rem;
-    padding: 2.5rem 3.5rem;
-    align-items: center;
-    justify-content: center;
-    background-color: #fff;
-    box-shadow: 0.85px 7.15px 61.46px rgba(237, 237, 237, 0.67);
-    border-radius: 1.2rem 1.2rem 1.2rem 0;
-    position: relative;
-}
-.before-testimonial-design .icon-container::after {
-    left: 0;
-    position: absolute;
-    content: '';
-    margin-left: 0px;
-    border-width: 1rem;
-    border-style: solid;
-    border-radius: 0rem 0rem 1rem 1rem;
-    border-color: white transparent transparent white;
-    bottom: -1.6rem;
+@media only screen and (max-width: 780px) {
+
+
+    .our-edge-area .single-feature {
+        width: 100%;
+        border-bottom: .1rem solid #E9FAFF;
+    }
+    .our-edge-content-area .content-container {
+        min-height: auto;
+    }
 }
 
 
 
-/* --------------------------   our-passion   -------------------------- */
+/* --------------------------   OUR PASSION CTA   -------------------------- */
 
 .our-passion-cta {
     background-size: cover;
@@ -1004,6 +1037,7 @@ a.cta-btn.btn {
 }
 .our-passion-cta .title-area {
     display: flex;
+    flex-wrap: wrap;
     align-items: flex-end;
     justify-content: space-between;
     padding: 7.8rem 0;
@@ -1013,6 +1047,7 @@ a.cta-btn.btn {
     flex-direction: column;
     line-height: 5.5rem;
     color: rgb(255, 255, 255);
+    margin: 0 2rem 0 0;
 }
 .our-passion-cta h2 span:first-child {
     letter-spacing: 1rem;
@@ -1085,11 +1120,40 @@ a.cta-btn.btn {
     margin-right: 1.6rem;
 }
 
+@media only screen and (max-width: 850px) {
+
+    .our-passion-cta h2 {
+        margin: 0 0 3rem 0;
+    }
+    .our-passion-cta h2 span:first-child {
+        font-size: clamp(1.8rem, 2vw + 1.6rem, 4rem);
+    }
+    .our-passion-cta h2 span:first-child::after {
+        left: clamp(40rem, 10vw + 38rem, 52rem);
+    }
+
+}
+@media only screen and (max-width: 500px) {
+
+    
+    .our-passion-cta h2 span:first-child::after {
+        display: none;
+    }
+
+    
+
+}
+
+
+
 
 
 /* --------------------------   BLOG AREA   -------------------------- */
 
-
+.blog-area .container {
+    max-width: calc(133rem + 29.5rem);
+    margin: 0 0 0 auto;
+}
 .blog-area {
     padding: 20rem 0 11rem;
 }
@@ -1140,14 +1204,15 @@ a.cta-btn.btn {
    margin-right: .8rem; 
 }
 .blog-content-container {
-    padding: 2rem 2.2rem 1rem 2.5rem;
+    padding: 2rem 2.19rem 1rem 2.5rem;
 }
-.blog-title {
+.blog-title h2 {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    min-height: 2rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+    min-height: 4rem;
     line-height: 2.5rem;
-    color: #000;
+    color: #193c48;
     margin: 0 0 1.1rem;
 }
 .blog-content {
@@ -1156,18 +1221,19 @@ a.cta-btn.btn {
     min-height: 10.5rem;
     padding-bottom: 1rem;
     border-bottom: .1rem solid #D4E7ED;
-    width: 31rem;
+    max-width: 32rem;
+    width: 100%;
 }
-a.blog-btn.btn {
+a.blog-btn {
     justify-content: start;
     padding: 1.5rem 0;
     font-size: 1.2rem;
+    line-height: 1.5rem;
+    color: #193c48;
+    font-family: 'Montserrat', sans-serif;
 }
 a.blog-btn span {
     margin-right: 1rem;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    color: #000;
 }
 .blog-area .next-arrow,
 .blog-area .prev-arrow {
@@ -1192,7 +1258,61 @@ a.blog-btn span {
 .blog-area .prev-arrow svg {
     fill: #07B3C5;
 }
+.blog-area .slick-slide {
+    margin-right: 1.5rem !important;
+}
 
+
+
+
+/* --------------------------   BEFORE TESTIMONIAL   -------------------------- */
+
+
+
+.before-testimonial-design {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.before-testimonial-design::before,
+.before-testimonial-design::after {
+    position: absolute;
+    content: '';
+    width: calc(50% - 8rem);
+    height: .1rem;
+    border-top: .1rem solid #D4E7ED;
+    top: 50%;
+}
+.before-testimonial-design::before {
+    left: 0;
+}
+.before-testimonial-design::after {
+    right: 0;
+}
+.before-testimonial-design .icon-container {
+    display: flex;
+    width: 11.281rem;
+    height: 9.488rem;
+    padding: 2.5rem 3.5rem;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    box-shadow: 0.85px 7.15px 61.46px rgba(237, 237, 237, 0.67);
+    border-radius: 1.2rem 1.2rem 1.2rem 0;
+    position: relative;
+}
+.before-testimonial-design .icon-container::after {
+    left: 0;
+    position: absolute;
+    content: '';
+    margin-left: 0px;
+    border-width: 1rem;
+    border-style: solid;
+    border-radius: 0rem 0rem 1rem 1rem;
+    border-color: white transparent transparent white;
+    bottom: -1.6rem;
+}
 
 
 
@@ -1212,11 +1332,13 @@ a.blog-btn span {
 }
 .testimonial_title_row h2 {
     margin-bottom: 1.2rem;
+    line-height: 4.6rem;
 }
 .testimonial_title_row .sub-title {
     width: 100%;
     max-width: 63rem;
     margin: 0 auto 8rem;
+    letter-spacing: .016rem;
 }
 .testimonial_content-row {
     display: flex;
@@ -1224,17 +1346,18 @@ a.blog-btn span {
 }
 
 .testimonial .single_content {
-    padding: 3.5rem 4rem 2.5rem;
+    padding: 3.3rem 3.5rem 2.5rem 4.2rem;
     max-width: 58rem;
-    font-size: 1.25rem;
-    line-height: 1.95rem;
+    font-size: 1.2rem;
+    line-height: 1.9rem;
+    font-weight: 500;
     box-shadow: -.715407rem .715407rem 2.14624rem #EFF4FF;
     margin: 1.5rem 0rem 2.5rem 0rem;
 }
 
 .testimonial .content {
     margin-bottom: 1.6rem;
-    min-height: 15.5rem;
+    min-height: 16.5rem;
 }
 
 .testimonial .star_container {
@@ -1258,14 +1381,17 @@ a.blog-btn span {
 
 .testimonial .name_holder {
     font-size: 1.4rem;
-    font-weight: bold;
+    font-weight: 700;
     color: #0A2847;
-    line-height: 1.56rem;
+    line-height: 1.6rem;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .title-holder {
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.1rem;
-    line-height: 1.56rem;
+    line-height: 1.6rem;
+    font-weight: 500;
 }
 
 .testimonial .prev-arrow,
@@ -1398,15 +1524,18 @@ fieldset{
     margin-right: 1.5rem;
 }
 .support-area .content-holder .contact{
-    font-size: 2.8rem;
+    font-size: 2.88rem;
     font-weight: 800;
     color: #07B3C5;
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
+    line-height: 3.5rem;
+    margin-bottom: .3rem;
 }
 .support-area .content-holder div:last-child {
     font-size: 1.7rem;
     font-weight: 600;
+    line-height: 2.1rem;
 }
 @media only screen and (max-width: 1050px) {
     
