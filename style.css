@@ -555,6 +555,20 @@ a.btn{
 }
 .add-container .img-container{
     max-width: 34rem;
+    display: flex;
+    justify-content: space-between;
+}
+.add-container .img-container a {
+    max-width: 45%;
+    position: relative;
+}
+.add-container .img-container a:first-child::after {
+    position: absolute;
+    content: '';
+    width: .1rem;
+    border-right: .1rem solid #748B91;
+    height: 5.5rem;
+    right: -1.6rem;
 }
 @media only screen and (max-width: 1050px) {
 
